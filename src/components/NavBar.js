@@ -1,9 +1,11 @@
-import React from "react";
+import "@testing-library/jest-dom";
+import { render } from "@testing-library/react";
+import NavBar from "../components/NavBar";
 
-function NavBar() {
-  return (
-    <nav>
-      <a href="#home">I'm a link!</a>
-    </nav>
-  );
-}
+test("it is exported as a default export", () => {
+  try {
+    expect(() => render(<NavBar />)).not.toThrow();
+  } catch (e) {
+    throw new Error("Make sure to export this component!");
+  }
+});
